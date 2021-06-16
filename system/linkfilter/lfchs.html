@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html class=" responsive" lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<meta name="theme-color" content="#171a21">
+		<title>Team Alanta</title>
+		<link href="buttons.css" rel="stylesheet" type="text/css" >
+		<link href="linkfilter.css" rel="stylesheet" type="text/css" >
+	</head>
+	
+	<body>
+		<div class="warningPanel friendlyInterstital">
+			<div class="warningSign">
+			<h1>注意：</h1>
+			<h2>您正要离开 Vanadiry 官方站点。</h2>
+			</div>
+				<div class="warningExplanation">
+				<h2>指向的页面是外部网站！</h2>
+				<p>您不应在不受信任的网站上输入您的账号、密码等个人信息，以避免您的个人数据泄露。<br />
+				访问一个 Vanadiry 官方站点时，浏览器的地址栏会始终显示该站点域名，并带有挂锁图标，如下图所示：</p>
+				<p>
+				<span class="evCert default">vanadiry.cn/***</span>
+				<a href="/index.html"><span class="evCert default">退回首页</span></a>
+				</p>
+					<div class="centering" id="warningActions">
+					<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
+					<span>继续访问外部网站（<span id="seconds">30</span>秒）</span>
+					</a>
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
+
+<script>
+	// 获取当前url地址
+	var url = window.location.href;
+	// 截取传递的url参数
+	url = url.match(/url=(\S*)/)[1];
+	document.getElementById("UrlId").href = url;
+	// 获取秒数显示id
+	var seconds = document.getElementById("seconds");
+	// 设置秒数
+    var num = 30;
+    var timer = setInterval(function () {
+        num--;
+        seconds.innerText = num;
+        if(num == 0){
+            window.location.href = url;
+        }
+    },1000)
+</script>
