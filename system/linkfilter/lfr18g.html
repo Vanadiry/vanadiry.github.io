@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class=" responsive">
+<html class=" responsive" lang="zh-cn">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,22 +10,21 @@
 	</head>
 	
 	<body>
-		<div class="warningPanel friendlyInterstital">
+		<div class="warningPanel">
 			<div class="warningSign">
-			<h1>Notice:</h1>
-			<h2>You are leaving official Vanadiry site.</h2>
+			<h1>注意：</h1>
+			<h2>您正要打开含有R18-G内容的页面。</h2>
 			</div>
 				<div class="warningExplanation">
-				<h2>The page pointed to is an external website!</h2>
-				<p>You should not enter your account number, password and other personal information on untrusted websites to avoid leakage of your personal data.<br />
-				Any login form on an official Vanadiry site will display  the domain name of the site with a padlock icon in your browser’s address bar, as shown below:</p>
+				<h2>指向的页面含有R18-G内容！</h2>
+				<p>R18-G指18岁以下禁止观看的，含有各种猎奇、暴力性残虐、出血、内脏露出、身体残缺等画面<br />
+				观看这些内容可能会对您的身心造成伤害，甚至影响您的生活。</p>
 				<p>
-				<span class="evCert default">vanadiry.com/***</span>
-				<a href="/index.html"><span class="evCert default">Back to homepage</span></a>
+				<a href="/index.html"><span class="evCert default">退回首页</span></a>
 				</p>
 					<div class="centering" id="warningActions">
 					<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
-					<span>Continue to visit external website（<span id="seconds">30</span>s）</span>
+					<span>我已了解，确定继续访问（<span id="seconds">120</span>秒）</span>
 					</a>
 					</div>
 				</div>
@@ -43,7 +42,7 @@
 	// 获取秒数显示id
 	var seconds = document.getElementById("seconds");
 	// 设置秒数
-    var num = 30;
+    var num = 120;
     var timer = setInterval(function () {
         num--;
         seconds.innerText = num;
