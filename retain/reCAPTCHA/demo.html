@@ -1,21 +1,14 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>reCAPTCHA demo</title>
-    <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+      <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="recaptcha.js"></script>
   </head>
   <body>
-    <form action="?" method="POST">
-      <div
-        class="g-recaptcha"
-        data-callback="robotVerified"
-        data-sitekey="6Le4vT4bAAAAAFdMZQ1cuOgEzIkYfW2wwQ13PCWj"
-      ></div>
-    </form>
+            <!--验证码将会出现在该位置-->
+    <div class="g-recaptcha" data-sitekey="6Le4vT4bAAAAAFdMZQ1cuOgEzIkYfW2wwQ13PCWj"></div>
+            <!--url已更改为recaptcha.net,国内用户可正常加载验证码-->
+    <script src="https://www.recaptcha.net/recaptcha/api.js"></script>
   </body>
-  <script src="https://www.recaptcha.net/recaptcha/api.js?onloadCallback&render=explicit" async defer></script>
-  <script>
-    function robotVerified() {
-      console.log("Verified: not robot");
-    }
-  </script>
 </html>
