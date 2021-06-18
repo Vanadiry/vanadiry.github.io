@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>reCAPTCHA demo</title>
+    <script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+  </head>
+  <body>
+    <form action="?" method="POST">
+      <div
+        class="g-recaptcha"
+        data-callback="robotVerified"
+        data-sitekey="6Le4vT4bAAAAAFdMZQ1cuOgEzIkYfW2wwQ13PCWj"
+      ></div>
+    </form>
+  </body>
+  <script src="https://www.recaptcha.net/recaptcha/api.js?onloadCallback&render=explicit" async defer></script>
+  <script>
+    function robotVerified() {
+      console.log("Verified: not robot");
+    }
+  </script>
+</html>
