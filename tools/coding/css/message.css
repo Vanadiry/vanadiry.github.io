@@ -1,0 +1,77 @@
+/*æ¶ˆæ¯é€šçŸ¥çš„å¼¹å‡ºæ¡†*/
+.msg-container{
+  position: absolute;
+  right: 0;
+  top: 30px;
+  width: 245px;
+  padding: 0;
+  background-color: #fff;
+  border: 1px solid #e7eaf1;
+  border-radius: 4px;
+  box-shadow: 0 5px 20px rgba(0,34,77,.1);
+}
+.msg-container .msg-header{
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ebeef5;
+}
+.msg-container .msg-header a{
+  display: block;
+}
+.msg-container .msg-content{
+  max-height: 350px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+.msg-content .content-item{
+  position: relative;
+  padding: 10px;
+  line-height: 24px;
+  color: #262626;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.msg-content .content-item:not(:last-child):after{
+  position: absolute;
+  right: 0;
+  bottom: 1px;
+  left: 0;
+  height: 1px;
+  padding: 0 11px;
+  background-color: #ebeef5;
+  content: "";
+  background-clip: content-box;
+}
+.msg-container .msg-footer{
+  height: 40px;
+  line-height: 40px;
+  padding: 0 16px;
+  border-top: 1px solid #ebeef5;
+}
+.msg-footer .footer-right{
+  text-align: right;
+}
+.msg-container .msg-arrow-up{
+  position: absolute;
+  right: 65px;
+  top: -8px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid #e7eaf1;
+}
+.msg-container .msg-arrow-up:after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+}
