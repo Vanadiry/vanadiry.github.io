@@ -1,0 +1,202 @@
+:root {
+  --fz-10px: 2.415vw;
+  --fz-12px: 2.899vw;
+  --fz-14px: 3.382vw;
+  --fz-16px: 3.865vw;
+  --fz-18px: 4.348vw;
+  --fz-20px: 4.831vw;
+  --fz-22px: 5.314vw;
+  --fz-24px: 5.797vw;
+  --fz-26px: 6.28vw;
+  --fz-28px: 6.763vw;
+  --fz-30px: 7.246vw;
+  --fz-36px: 8.696vw;
+  --fz-52px: 12.56vw;
+  --fz-60px: 14.493vw;
+  --size-600px: 144.928vw;
+  --size-452px: 109.179vw;
+  --size-400px: 96.618vw;
+  --size-354px: 85.507vw;
+  --size-340px: 82.126vw;
+  --size-338px: 81.643vw;
+  --size-320px: 77.295vw;
+  --size-312px: 75.362vw;
+  --size-300px: 72.464vw;
+  --size-270px: 65.217vw;
+  --size-250px: 60.386vw;
+  --size-240px: 57.971vw;
+  --size-220px: 53.14vw;
+  --size-200px: 48.309vw;
+  --size-180px: 43.478vw;
+  --size-170px: 41.063vw;
+  --size-160px: 38.647vw;
+  --size-140px: 33.816vw;
+  --size-120px: 28.986vw;
+  --size-100px: 24.155vw;
+  --size-90px: 21.739vw;
+  --size-80px: 19.324vw;
+  --size-70px: 16.908vw;
+  --size-60px: 14.493vw;
+  --size-50px: 12.077vw;
+  --size-40px: 9.662vw;
+  --size-30px: 7.246vw;
+  --size-25px: 6.039vw;
+  --size-20px: 4.831vw;
+  --size-17px: 4.106vw;
+  --size-15px: 3.623vw;
+  --size-10px: 2.415vw;
+  --size-5px: 1.208vw;
+}
+@media (min-width: 768px) {
+  :root {
+    --fz-10px: 1.302vw;
+    --fz-12px: 1.563vw;
+    --fz-14px: 1.823vw;
+    --fz-16px: 2.083vw;
+    --fz-18px: 2.344vw;
+    --fz-20px: 2.604vw;
+    --fz-22px: 2.865vw;
+    --fz-24px: 3.125vw;
+    --fz-26px: 3.385vw;
+    --fz-28px: 3.646vw;
+    --fz-30px: 3.906vw;
+    --fz-36px: 4.688vw;
+    --fz-52px: 6.771vw;
+    --fz-60px: 7.813vw;
+    --size-692px: 90.104vw;
+    --size-640px: 83.333vw;
+    --size-600px: 78.125vw;
+    --size-452px: 58.854vw;
+    --size-400px: 52.083vw;
+    --size-354px: 46.094vw;
+    --size-340px: 44.271vw;
+    --size-338px: 44.01vw;
+    --size-320px: 41.667vw;
+    --size-312px: 40.625vw;
+    --size-300px: 39.063vw;
+    --size-270px: 35.156vw;
+    --size-250px: 32.552vw;
+    --size-240px: 31.25vw;
+    --size-220px: 28.646vw;
+    --size-200px: 26.042vw;
+    --size-180px: 23.438vw;
+    --size-170px: 22.135vw;
+    --size-160px: 20.833vw;
+    --size-140px: 18.229vw;
+    --size-120px: 15.625vw;
+    --size-100px: 13.021vw;
+    --size-90px: 11.719vw;
+    --size-80px: 10.417vw;
+    --size-70px: 9.115vw;
+    --size-60px: 7.813vw;
+    --size-50px: 6.51vw;
+    --size-40px: 5.208vw;
+    --size-30px: 3.906vw;
+    --size-25px: 3.255vw;
+    --size-20px: 2.604vw;
+    --size-17px: 2.214vw;
+    --size-15px: 1.953vw;
+    --size-10px: 1.302vw;
+    --size-5px: 0.651vw;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --fz-10px: 10px;
+    --fz-12px: 12px;
+    --fz-14px: 14px;
+    --fz-16px: 16px;
+    --fz-18px: 18px;
+    --fz-20px: 20px;
+    --fz-22px: 22px;
+    --fz-24px: 24px;
+    --fz-26px: 26px;
+    --fz-28px: 28px;
+    --fz-30px: 30px;
+    --fz-36px: 36px;
+    --fz-52px: 52px;
+    --fz-60px: 60px;
+    --size-810px: 810px;
+    --size-692px: 692px;
+    --size-640px: 640px;
+    --size-600px: 600px;
+    --size-452px: 452px;
+    --size-400px: 400px;
+    --size-354px: 354px;
+    --size-340px: 340px;
+    --size-338px: 338px;
+    --size-320px: 320px;
+    --size-312px: 312px;
+    --size-300px: 300px;
+    --size-270px: 270px;
+    --size-250px: 250px;
+    --size-240px: 240px;
+    --size-220px: 220px;
+    --size-200px: 200px;
+    --size-180px: 180px;
+    --size-170px: 170vw;
+    --size-160px: 160px;
+    --size-140px: 140px;
+    --size-120px: 120px;
+    --size-100px: 100px;
+    --size-90px: 90px;
+    --size-80px: 80px;
+    --size-70px: 70px;
+    --size-60px: 60px;
+    --size-50px: 50px;
+    --size-40px: 40px;
+    --size-30px: 30px;
+    --size-25px: 25px;
+    --size-20px: 20px;
+    --size-17px: 17px;
+    --size-15px: 15px;
+    --size-10px: 10px;
+    --size-5px: 5px;
+  }
+}
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: unset;
+  color: #586166;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Arial, Poppins,
+    Noto Sans JP, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo, sans-serif;
+  font-feature-settings: "palt" 1, "kern" 1;
+  -webkit-font-kerning: normal;
+  font-kerning: normal;
+  letter-spacing: 0.07em;
+  line-break: strict;
+  line-height: 1.8;
+}
+.over18 {
+  text-align: center;
+}
+.over18 .over18__icon {
+  margin-bottom: 2em;
+}
+@media (min-width: 1200px) {
+  .over18 .over18__icon {
+    height: auto;
+    width: 120px;
+  }
+}
+.over18 .over18__notice {
+  color: #f5f2e9;
+  font-family: tbnpmincho-std, serif;
+  font-size: var(--fz-12px);
+  font-weight: 300;
+  letter-spacing: 0.14em;
+}
+.over18 .over18__check {
+  display: flex;
+  justify-content: center;
+}
+.over18 .over18__check .over18__link {
+  color: #f5f2e9;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  margin: 2em;
+  transition: transform 0.2s;
+}
+.over18 .over18__check .over18__link:hover {
+  transform: scale(1.2);
+}
