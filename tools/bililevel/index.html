@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	<title>Bilibili等级计算器</title>
+	<link rel="stylesheet" href="layui/css/layui.css" />
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<style>
+		.layui-card-body {
+			min-height: 300px;
+		}
+	</style>
+
+</head>
+
+<body style="background-color: #f2f2f2;">
+	<div class="layui-fluid" id="LAY-component-grid-all" style="margin-top: 15px;">
+		<div class="layui-row layui-col-space10">
+			<div class="layui-col-xs12 layui-col-sm4 layui-col-md4">
+				<div class="layui-card">
+					<div class="layui-card-header">
+						达成条件:
+					</div>
+					<div class="layui-card-body">
+						<form class="layui-form" lay-filter="formBili">
+							<div class="layui-form-item">
+								<label class="layui-form-label">每日登录</label>
+								<div class="layui-input-block">
+									<input type="checkbox" lay-filter="checkbox1" name="like[login]" value="login"
+										title="每日登录Ｂ站+5">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">每日观看</label>
+								<div class="layui-input-block">
+									<input type="checkbox" lay-filter="checkbox2" name="like[watch]" value="watch"
+										title="每日观看视频+5">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">每日分享</label>
+								<div class="layui-input-block">
+									<input type="checkbox" lay-filter="checkbox3" name="like[share]" value="share"
+										title="每日分享视频+5">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">风纪委员S</label>
+								<div class="layui-input-block">
+									<input type="checkbox" lay-filter="checkbox4" name="like[judgeMen]" value="judgeMen"
+										title="月度硬币+20">
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<label class="layui-form-label">每日投币</label>
+								<div class="layui-input-inline">
+									<select name="quiz1" lay-filter="select1">
+										<option value="">投币数量</option>
+										<option value="0" selected="">每日一个币不投</option>
+										<option value="1">每日投一个币</option>
+										<option value="2">每日投两个币</option>
+										<option value="3">每日投三个币</option>
+										<option value="4">每日投四个币</option>
+										<option value="5">每日投五个币</option>
+									</select>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-inline">
+									<label class="layui-form-label">拥有硬币</label>
+									<div class="layui-input-inline">
+										<input type="text" id="yingbi" autocomplete="off" class="layui-input" value="10"
+											oninput="only_number(this,1);" />
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-inline">
+									<label class="layui-form-label">当前经验</label>
+									<div class="layui-input-inline">
+										<input type="number" id="thisJingYan" autocomplete="off" class="layui-input"
+											value="0" oninput="only_number(this,2);" />
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-inline">
+									<label class="layui-form-label">等级经验</label>
+									<div class="layui-input-inline">
+										<input type="number" id="sixJingYan" autocomplete="off" class="layui-input"
+											value="28800" oninput="only_number(this,3);" />
+									</div>
+								</div>
+							</div>
+							<div class="layui-form-item">
+								<div class="layui-inline">
+									<label class="layui-form-label">距离天数</label>
+									<div class="layui-input-block" align="center"
+										style="min-width: 200px;min-height: 100px;">
+										<div style="margin-top: 20px;">
+											<span id="juLiTianShu" style="font-size: 80px;color: #fb7299;">null</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script>
+		var login = false;
+		var watch = false;
+		var share = false;
+		var judgeMen = false;
+		var touBiShuLiang = 0;
+		var yongYouYingBi = 10;
+		var thisJingYan = 0;
+		var sixJingYan = 28800;
+		layui.use('form', function () {
+			var form = layui.form;
+			var $ = layui.$;
+			form.on('checkbox(checkbox1)', function (data) {
+				console.log(data.elem.checked);
+
+				login = data.elem.checked;
+				jiSuan();
+			});
+			form.on('checkbox(checkbox2)', function (data) {
+				console.log(data.elem.checked);
+
+				watch = data.elem.checked;
+				jiSuan();
+			});
+			form.on('checkbox(checkbox3)', function (data) {
+				console.log(data.elem.checked);
+				share = data.elem.checked;
+				jiSuan();
+			});
+			form.on('checkbox(checkbox4)', function (data) {
+				console.log(data.elem.checked);
+				judgeMen = data.elem.checked;
+				jiSuan();
+			});
+			form.on('select(select1)', function (data) {
+				if (data.value == null || data.value == "") {
+					touBiShuLiang = 0;
+				} else {
+					touBiShuLiang = data.value;
+				}
+				jiSuan();
+			});
+		});
+		//输入框，限金额
+		function only_number(obj, type) {
+			//先把非数字的都替换掉，除了数字和.
+			obj.value = obj.value.replace(/[^\d.]/g, "");
+			//必须保证第一个为数字而不是.
+			obj.value = obj.value.replace(/^\./g, "");
+			//保证只有出现一个.而没有多个.
+			obj.value = obj.value.replace(/\.{2,}/g, ".");
+			//保证.只出现一次，而不能出现两次以上
+			obj.value = obj.value.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+			if (type == 1) {
+				yongYouYingBi = obj.value;
+			} else if (type == 2) {
+				thisJingYan = obj.value;
+			} else if (type == 3) {
+				sixJingYan = obj.value;
+			}
+			jiSuan();
+		}
+
+		function jiSuan() {
+			var num = 0;
+			if (login == true || login == "true") {
+				num = num + 5;
+			}
+			if (watch == true || watch == "true") {
+				num = num + 5;
+			}
+			if (share == true || share == "true") {
+				num = num + 5;
+			}
+			console.log("每日基础=" + num);
+			var touBi = (touBiShuLiang * 10);
+			console.log("每日投币=" + touBi);
+			var bi = yongYouYingBi;
+			console.log("拥有硬币=" + touBi);
+			var xuYaoJingYan;
+			if (sixJingYan > thisJingYan) {
+
+				xuYaoJingYan = sixJingYan - thisJingYan;
+				//console.log("需要经验值=" + xuYaoJingYan);
+			} else {
+				document.getElementById("juLiTianShu").innerText = 0;
+			}
+			var tian = 0;
+			for (var i = 0; 0 < xuYaoJingYan; i++) {
+				//判断是否使用风纪委员的逻辑
+				if (judgeMen) {
+					if (i % 30 === 0) {
+						bi += 20;
+					}
+				}
+				xuYaoJingYan = xuYaoJingYan - num;
+				if (bi > touBiShuLiang) {
+					//减去每日的投币经验
+					xuYaoJingYan = xuYaoJingYan - touBi;
+					//减去每日的投币经验
+					bi = bi - touBiShuLiang;
+				}
+				bi++;
+				tian = i;
+				if (tian > 10000) {
+					document.getElementById("juLiTianShu").innerText = tian;
+					return;
+				}
+				//					console.log("需要经验值=" + xuYaoJingYan + "当前天数=" + tian);
+			}
+
+			document.getElementById("juLiTianShu").innerText = tian;
+		}
+	</script>
+</body>
+
+</html>

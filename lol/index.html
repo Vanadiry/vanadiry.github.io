@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+		<title>生草域-Site Map</title>
+		<link rel="stylesheet" href="sitemap.built.css" type="text/css" />
+	</head>	
+	<body>
+		<section class="section-hero">
+			<h1 class="section-headline">生草域</h1>
+			<h4>Site Map<br />Time:<span id ="datetime">ERROR</span></h4>
+		</section>
+<!--   <section class="category category">
+			<h2 class="category-title">大标题</h2>
+			<ul class="category-sections list list-nobullet">
+				((<li>
+					<section class="category-section">
+						<h3 class="typography-sitemap-subsection">分类</h3>
+						<ul class="list list-nobullet">
+							<li><a href="地址">内部</a></li>
+						</ul>
+					</section>
+				</li>/))
+			</ul>
+		</section>   -->
+		
+		<!--zh-->
+		<section class="category category">
+			<h2 class="category-title">（？</h2>
+			<ul class="category-sections list list-nobullet">
+				<li>
+					<section class="category-section">
+						<ul class="list list-nobullet">
+							<li><a href="reCAPTCHA/enjoy.html">reCAPTCHA</a></li>
+						</ul>
+					</section>
+				</li>
+			</ul>
+		</section>
+		
+		<section class="category category">
+			<h2 class="category-title">音游！</h2>
+			<ul class="category-sections list list-nobullet">
+				<li>
+					<section class="category-section">
+						<ul class="list list-nobullet">
+							<li><a href="tap/wow.html">底力去世器（别踩白块（误</a></li>
+						</ul>
+					</section>
+				</li>
+			</ul>
+		</section>
+
+		<script>
+Date.prototype.format = function (fmt) {
+var o = {
+"y+": this.getFullYear, //年
+"M+": this.getMonth() + 1, //月份
+"d+": this.getDate(), //日
+"h+": this.getHours(), //小时
+"m+": this.getMinutes(), //分
+"s+": this.getSeconds() //秒
+};
+if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+for (var k in o)
+if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+return fmt;
+}
+setInterval("document.getElementById('datetime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+		</script>
+	</body>
+</html>

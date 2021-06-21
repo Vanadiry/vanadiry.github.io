@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="theme-color" content="#171a21">
-		<title>Team Alanta</title>
-		<link href="buttons.css" rel="stylesheet" type="text/css" >
-		<link href="linkfilter.css" rel="stylesheet" type="text/css" >
-	</head>
-	
-	<body>
-		<div class="warningPanel friendlyInterstital">
-			<div class="warningSign">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#171a21">
+	<title>Team Alanta</title>
+	<link href="buttons.css" rel="stylesheet" type="text/css">
+	<link href="linkfilter.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="warningPanel friendlyInterstital">
+		<div class="warningSign">
 			<h1>注：</h1>
 			<h2>Vandiaryの公式サイトを離れます。</h2>
-			</div>
-				<div class="warningExplanation">
-				<h2>指し示しているページは外部のウェブサイトです！</h2>
-				<p>個人データの漏えいを防ぐため、信頼できないWebサイトにアカウント番号、パスワード、その他の個人情報を入力しないでください。<br />
+		</div>
+		<div class="warningExplanation">
+			<h2>指し示しているページは外部のウェブサイトです！</h2>
+			<p>個人データの漏えいを防ぐため、信頼できないWebサイトにアカウント番号、パスワード、その他の個人情報を入力しないでください。<br />
 				次の図に示すように、Vanadiryの公式サイトにアクセスすると、ブラウザのアドレスバーに常に南京錠のアイコンが付いたサイトのドメイン名が表示されます。</p>
-				<p>
+			<p>
 				<span class="evCert default">vanadiry.com/***</span>
 				<a href="/index.html"><span class="evCert default">ホームページに戻る</span></a>
-				</p>
-					<div class="centering" id="warningActions">
-					<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
+			</p>
+			<div class="centering" id="warningActions">
+				<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
 					<span>引き続き外部Webサイトにアクセス（<span id="seconds">30</span>秒）</span>
-					</a>
-					</div>
-				</div>
+				</a>
+			</div>
 		</div>
-		<script src="../safe.js"></script>
-	</body>
+	</div>
+	<script src="../safe.js"></script>
+</body>
+
 </html>
 
 <script>
@@ -43,12 +45,12 @@
 	// 获取秒数显示id
 	var seconds = document.getElementById("seconds");
 	// 设置秒数
-    var num = 30;
-    var timer = setInterval(function () {
-        num--;
-        seconds.innerText = num;
-        if(num == 0){
-            window.location.href = url;
-        }
-    },1000)
+	var num = 30;
+	var timer = setInterval(function () {
+		num--;
+		seconds.innerText = num;
+		if (num == 0) {
+			window.location.href = url;
+		}
+	}, 1000)
 </script>

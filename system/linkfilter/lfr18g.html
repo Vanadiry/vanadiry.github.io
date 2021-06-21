@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html class=" responsive" lang="zh-cn">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="theme-color" content="#171a21">
-		<title>Team Alanta</title>
-		<link href="buttons.css" rel="stylesheet" type="text/css" >
-		<link href="linkfilter.css" rel="stylesheet" type="text/css" >
-	</head>
-	
-	<body>
-		<div class="warningPanel">
-			<div class="warningSign">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#171a21">
+	<title>Team Alanta</title>
+	<link href="buttons.css" rel="stylesheet" type="text/css">
+	<link href="linkfilter.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="warningPanel">
+		<div class="warningSign">
 			<h1>注意：</h1>
 			<h2>您正要打开含有R18-G内容的页面。</h2>
-			</div>
-				<div class="warningExplanation">
-				<h2>指向的页面含有R18-G内容！</h2>
-				<p>R18-G指18岁以下禁止观看的，含有各种猎奇、暴力性残虐、出血、内脏露出、身体残缺等画面<br />
-				观看这些内容可能会对您的身心造成伤害，甚至影响您的生活。</p>
-				<p>
-				<a href="/index.html"><span class="evCert default">退回首页</span></a>
-				</p>
-					<div class="centering" id="warningActions">
-					<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
-					<span>我已了解，确定继续访问（<span id="seconds">120</span>秒）</span>
-					</a>
-					</div>
-				</div>
 		</div>
-		<script src="../safe.js"></script>
-	</body>
+		<div class="warningExplanation">
+			<h2>指向的页面含有R18-G内容！</h2>
+			<p>R18-G指18岁以下禁止观看的，含有各种猎奇、暴力性残虐、出血、内脏露出、身体残缺等画面<br />
+				观看这些内容可能会对您的身心造成伤害，甚至影响您的生活。</p>
+			<p>
+				<a href="/index.html"><span class="evCert default">退回首页</span></a>
+			</p>
+			<div class="centering" id="warningActions">
+				<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
+					<span>我已了解，确定继续访问（<span id="seconds">120</span>秒）</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<script src="../safe.js"></script>
+</body>
+
 </html>
 
 <script>
@@ -42,12 +44,12 @@
 	// 获取秒数显示id
 	var seconds = document.getElementById("seconds");
 	// 设置秒数
-    var num = 120;
-    var timer = setInterval(function () {
-        num--;
-        seconds.innerText = num;
-        if(num == 0){
-            window.location.href = url;
-        }
-    },1000)
+	var num = 120;
+	var timer = setInterval(function () {
+		num--;
+		seconds.innerText = num;
+		if (num == 0) {
+			window.location.href = url;
+		}
+	}, 1000)
 </script>

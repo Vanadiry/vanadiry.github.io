@@ -1,279 +1,286 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-	    <title>系统状态-System Status</title>
-	    <link rel="stylesheet" href="site.built.css" type="text/css">
-	</head>
-	<body>
-		<div>
-			<main class="main" role="main">
-				<section class="section-hero">
-					<h1 class="section-headline">系统状态</h1>
-					<h4>System Status<br />Time:<span id ="datetime">ERROR</span></h4>
-				</section>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<title>系统状态-System Status</title>
+	<link rel="stylesheet" href="site.built.css" type="text/css">
+</head>
+
+<body>
+	<div>
+		<main class="main" role="main">
+			<section class="section-hero">
+				<h1 class="section-headline">系统状态</h1>
+				<h4>System Status<br />Time:<span id="datetime">ERROR</span></h4>
+			</section>
+			<div>
 				<div>
-					<div>
-						<section id="sty" class="section-legend" role="group">
-							<ul>
-								<li>
-									<div class="light-available"></div>
-									<span role="text">可用</span>
-								</li>
-								<li>
-									<div class="light-issue"></div>
-									<span role="text">正在建设</span>
-								</li>
-								<li>
-									<div class="light-outage"></div>
-									<span role="text">服务中断</span>
-								</li>
-							</ul>
-						</section>
-						<section class="section-lights">
-							<!--ch-->
-							<table id="ch" role="presentation">
-								<tbody>
-									<tr>
-										<td id="ch1">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">主页</span>
-												</div>
+					<section id="sty" class="section-legend" role="group">
+						<ul>
+							<li>
+								<div class="light-available"></div>
+								<span role="text">可用</span>
+							</li>
+							<li>
+								<div class="light-issue"></div>
+								<span role="text">正在建设</span>
+							</li>
+							<li>
+								<div class="light-outage"></div>
+								<span role="text">服务中断</span>
+							</li>
+						</ul>
+					</section>
+					<section class="section-lights">
+						<!--ch-->
+						<table id="ch" role="presentation">
+							<tbody>
+								<tr>
+									<td id="ch1">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-										<td id="ch2">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">桐间纱路</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">主页</span>
 											</div>
-										</td>
-										<td id="ch3">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-issue"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">和泉纱雾</span>
-												</div>
+										</div>
+									</td>
+									<td id="ch2">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-									</tr>
-									<tr>
-										<td id="ch4">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">解密</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">桐间纱路</span>
 											</div>
-										</td>
-										<td id="ch5">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">OldMemory视觉小说</span>
-												</div>
+										</div>
+									</td>
+									<td id="ch3">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-issue"></div>
 											</div>
-										</td>
-										<td id="ch6">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">下载</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">和泉纱雾</span>
 											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<!--Safe-->
-							<table id="sa" role="presentation">
-								<p>安全性</p>
-								<tbody>
-									<tr>
-										<td id="sa1">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">链接过滤器</span>
-												</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td id="ch4">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-										<td id="sa2">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">Link Filter</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">解密</span>
 											</div>
-										</td>
-										<td id="sa3">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">リンクフィルタリング</span>
-												</div>
+										</div>
+									</td>
+									<td id="ch5">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<!--other-->
-							<table id="ot" role="presentation">
-								<p>其他</p>
-								<tbody>
-									<tr>
-										<td id="ot1">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-issue"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">IzumiSagiri</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">OldMemory视觉小说</span>
 											</div>
-										</td>
-										<td id="ot2">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">KirimaSyaro</span>
-												</div>
+										</div>
+									</td>
+									<td id="ch6">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-										<td id="ot3">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">停止维护页面的网站地图</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">下载</span>
 											</div>
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<!--Admin-->
-							<table id="adm" role="presentation">
-								<p>系统</p>
-								<tbody>
-									<tr>
-										<td id="ad1">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">系统状态</span>
-												</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--Safe-->
+						<table id="sa" role="presentation">
+							<p>安全性</p>
+							<tbody>
+								<tr>
+									<td id="sa1">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-										<td id="ad2">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-outage"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">局域网测试</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">链接过滤器</span>
 											</div>
-										</td>
-										<td id="ad3">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">公开测试</span>
-												</div>
+										</div>
+									</td>
+									<td id="sa2">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-									</tr>
-									<tr>
-										<td id="ad4">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">内部测试</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">Link Filter</span>
 											</div>
-										</td>
-										<td id="ad5">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">错误页</span>
-												</div>
+										</div>
+									</td>
+									<td id="sa3">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
 											</div>
-										</td>
-										<td id="ad6">
-											<div>
-												<div class="light-content light-image">
-													<div class="light-available"></div>
-												</div>
-												<div class="light-content light-name">
-													<span role="text">起始页</span>
-												</div>
+											<div class="light-content light-name">
+												<span role="text">リンクフィルタリング</span>
 											</div>
-							<!--我说为什么ad6这个id在我的浏览器测试时候打不开，原来我的ADBlock把它当成广告拦截掉了！！（悲-->
-										</td>
-									</tr>
-								</tbody>
-							</table>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--other-->
+						<table id="ot" role="presentation">
+							<p>其他</p>
+							<tbody>
+								<tr>
+									<td id="ot1">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-issue"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">IzumiSagiri</span>
+											</div>
+										</div>
+									</td>
+									<td id="ot2">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">KirimaSyaro</span>
+											</div>
+										</div>
+									</td>
+									<td id="ot3">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">停止维护页面的网站地图</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<!--Admin-->
+						<table id="adm" role="presentation">
+							<p>系统</p>
+							<tbody>
+								<tr>
+									<td id="ad1">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">系统状态</span>
+											</div>
+										</div>
+									</td>
+									<td id="ad2">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-outage"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">局域网测试</span>
+											</div>
+										</div>
+									</td>
+									<td id="ad3">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">公开测试</span>
+											</div>
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td id="ad4">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">内部测试</span>
+											</div>
+										</div>
+									</td>
+									<td id="ad5">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">错误页</span>
+											</div>
+										</div>
+									</td>
+									<td id="ad6">
+										<div>
+											<div class="light-content light-image">
+												<div class="light-available"></div>
+											</div>
+											<div class="light-content light-name">
+												<span role="text">起始页</span>
+											</div>
+										</div>
+										<!--我说为什么ad6这个id在我的浏览器测试时候打不开，原来我的ADBlock把它当成广告拦截掉了！！（悲-->
+									</td>
+								</tr>
+							</tbody>
+						</table>
 						<!--页脚-->
-						</section>
-						<section><p>建议使用横向屏幕查看以获得最佳视觉效果。<br />
-						站点将在2021-09-05停止维护。</p></section>
-					</div>
-					<section class="section-date"><p class="date-copy">最后更新：2021年3月5日 下午3:17</p></section>
+					</section>
+					<section>
+						<p>建议使用横向屏幕查看以获得最佳视觉效果。<br />
+							站点将在2021-09-05停止维护。</p>
+					</section>
 				</div>
-			</main>
-		</div>
-		<script>
-Date.prototype.format = function (fmt) {
-var o = {
-"y+": this.getFullYear, //年
-"M+": this.getMonth() + 1, //月份
-"d+": this.getDate(), //日
-"h+": this.getHours(), //小时
-"m+": this.getMinutes(), //分
-"s+": this.getSeconds() //秒
-};
-if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-for (var k in o)
-if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-return fmt;
-}
-setInterval("document.getElementById('datetime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
-		</script>
-		<script src="../safe.js"></script>
-	</body>
+				<section class="section-date">
+					<p class="date-copy">最后更新：2021年3月5日 下午3:17</p>
+				</section>
+			</div>
+		</main>
+	</div>
+	<script>
+		Date.prototype.format = function (fmt) {
+			var o = {
+				"y+": this.getFullYear, //年
+				"M+": this.getMonth() + 1, //月份
+				"d+": this.getDate(), //日
+				"h+": this.getHours(), //小时
+				"m+": this.getMinutes(), //分
+				"s+": this.getSeconds() //秒
+			};
+			if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+			for (var k in o)
+				if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			return fmt;
+		}
+		setInterval("document.getElementById('datetime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+	</script>
+	<script src="../safe.js"></script>
+</body>
+
 </html>

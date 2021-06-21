@@ -1,37 +1,41 @@
 <!DOCTYPE html>
 <html class=" responsive">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="theme-color" content="#171a21">
-		<title>Team Alanta</title>
-		<link href="buttons.css" rel="stylesheet" type="text/css" >
-		<link href="linkfilter.css" rel="stylesheet" type="text/css" >
-	</head>
-	
-	<body>
-		<div class="warningPanel friendlyInterstital">
-			<div class="warningSign">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="theme-color" content="#171a21">
+	<title>Team Alanta</title>
+	<link href="buttons.css" rel="stylesheet" type="text/css">
+	<link href="linkfilter.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="warningPanel friendlyInterstital">
+		<div class="warningSign">
 			<h1>Notice:</h1>
 			<h2>You are leaving official Vanadiry site.</h2>
-			</div>
-				<div class="warningExplanation">
-				<h2>The page pointed to is an external website!</h2>
-				<p>You should not enter your account number, password and other personal information on untrusted websites to avoid leakage of your personal data.<br />
-				Any login form on an official Vanadiry site will display  the domain name of the site with a padlock icon in your browser’s address bar, as shown below:</p>
-				<p>
+		</div>
+		<div class="warningExplanation">
+			<h2>The page pointed to is an external website!</h2>
+			<p>You should not enter your account number, password and other personal information on untrusted websites
+				to avoid leakage of your personal data.<br />
+				Any login form on an official Vanadiry site will display the domain name of the site with a padlock icon
+				in your browser’s address bar, as shown below:</p>
+			<p>
 				<span class="evCert default">vanadiry.com/***</span>
 				<a href="/index.html"><span class="evCert default">Back to homepage</span></a>
-				</p>
-					<div class="centering" id="warningActions">
-					<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
+			</p>
+			<div class="centering" id="warningActions">
+				<a id="UrlId" href="" class="btn_grey_white_innerfade btn_medium ">
 					<span>Continue to visit external website（<span id="seconds">30</span>s）</span>
-					</a>
-					</div>
-				</div>
+				</a>
+			</div>
 		</div>
-		<script src="../safe.js"></script>
-	</body>
+	</div>
+	<script src="../safe.js"></script>
+</body>
+
 </html>
 
 <script>
@@ -43,12 +47,12 @@
 	// 获取秒数显示id
 	var seconds = document.getElementById("seconds");
 	// 设置秒数
-    var num = 30;
-    var timer = setInterval(function () {
-        num--;
-        seconds.innerText = num;
-        if(num == 0){
-            window.location.href = url;
-        }
-    },1000)
+	var num = 30;
+	var timer = setInterval(function () {
+		num--;
+		seconds.innerText = num;
+		if (num == 0) {
+			window.location.href = url;
+		}
+	}, 1000)
 </script>
