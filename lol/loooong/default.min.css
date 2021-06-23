@@ -1,0 +1,151 @@
+@media screen {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html {
+    background: #000;
+    color: #ccc;
+    font: 87.5%/1.7 "open sans", optima, arial, sans-serif;
+    text-align: center;
+  }
+  html[lang="en"] #ad:before {
+    content: "Advertisement";
+  }
+  #show,
+  body {
+    margin: auto;
+  }
+  body {
+    max-width: 620px;
+    padding: 1em;
+  }
+  h2,
+  p {
+    margin: 0 0.5em;
+  }
+  p + p {
+    text-indent: 1em;
+  }
+  h1,
+  h2 {
+    font-size: 1em;
+    font-weight: 400;
+  }
+  #show,
+  h1 {
+    width: 620px;
+  }
+  h1 {
+    background: url(/media/logo.jpg) no-repeat;
+    height: 366px;
+    margin: 0.5em 0 0;
+    text-indent: -999em;
+  }
+  ul {
+    margin: 0.5em 0 0.5em 2em;
+  }
+  [dir="rtl"] ul {
+    margin: 0.5em 2em 0.5em 0;
+  }
+  a,
+  em,
+  kbd,
+  strong {
+    color: #fff;
+  }
+  cite,
+  em {
+    font-style: normal;
+  }
+  small {
+    font-size: inherit;
+    line-height: inherit;
+  }
+  kbd {
+    font-family: "open sans", optima, arial, sans-serif;
+  }
+  #lang {
+    list-style: none;
+    margin: 0.5em 2em 1em;
+  }
+  #lang li {
+    display: inline;
+  }
+  #show {
+    text-align: left;
+  }
+  [dir="rtl"] #show {
+    text-align: right;
+  }
+  #whws {
+    background: url(/media/tape.png) repeat-y top;
+    font-size: 100cm;
+    height: 2840em;
+    line-height: 1;
+    margin: 42px 0;
+  }
+  #hades {
+    position: relative;
+  }
+  #hades > p:last-child {
+    background: url(/media/end.jpg) no-repeat bottom;
+    padding-bottom: 179px;
+  }
+  #ad,
+  #ad:before {
+    display: block;
+  }
+  #ad {
+    padding: 0 0 0.5em;
+    text-decoration: none;
+  }
+  #ad:before {
+    color: #aaa;
+    content: "⚐";
+    font-size: 0.79em;
+    line-height: 1.45;
+  }
+}
+@media screen and (max-width: 648px) {
+  #show,
+  h1 {
+    width: 465px;
+  }
+  h1 {
+    background-size: 465px 274px;
+    height: 274px;
+  }
+}
+@media screen and (max-width: 647px) {
+  #hades > p:last-child {
+    background: none;
+    padding-bottom: 0;
+  }
+}
+@media screen and (max-width: 493px) {
+  #show,
+  h1 {
+    width: 310px;
+  }
+  h1 {
+    background-size: 310px 183px;
+    height: 183px;
+  }
+}
+@media print {
+  * {
+    background: #fff;
+    border: 0;
+    color: #000;
+    font-size: 1em;
+    text-decoration: none;
+  }
+  #whws:after {
+    font-weight: 700;
+  }
+  #ad,
+  #lang {
+    display: none;
+  }
+}
