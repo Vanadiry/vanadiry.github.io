@@ -1,169 +1,147 @@
+(function ($) {
+  var $window = $(window),
+    $body = $("body"),
+    $html = $("html");
 
-(function($) {
+  // Breakpoints.
+  breakpoints({
+    large: ["981px", "1680px"],
+    medium: ["737px", "980px"],
+    small: ["481px", "736px"],
+    xsmall: [null, "480px"],
+  });
 
-	var	$window = $(window),
-		$body = $('body'),
-		$html = $('html');
+  // Play initial animations on page load.
+  $window.on("load", function () {
+    window.setTimeout(function () {
+      $body.removeClass("is-preload");
+    }, 100);
+  });
 
-	// Breakpoints.
-		breakpoints({
-			large:   [ '981px',  '1680px' ],
-			medium:  [ '737px',  '980px'  ],
-			small:   [ '481px',  '736px'  ],
-			xsmall:  [ null,     '480px'  ]
-		});
+  // Touch mode.
+  if (browser.mobile) {
+    var $wrapper;
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
+    // Create wrapper.
+    $body.wrapInner('<div id="wrapper" />');
+    $wrapper = $("#wrapper");
 
-	// Touch mode.
-		if (browser.mobile) {
+    // Hack: iOS vh bug.
+    if (browser.os == "ios")
+      $wrapper.css("margin-top", -25).css("padding-bottom", 25);
 
-			var $wrapper;
+    // Pass scroll event to window.
+    $wrapper.on("scroll", function () {
+      $window.trigger("scroll");
+    });
 
-			// Create wrapper.
-				$body.wrapInner('<div id="wrapper" />');
-				$wrapper = $('#wrapper');
+    // Scrolly.
+    $window.on("load.hl_scrolly", function () {
+      $(".scrolly").scrolly({
+        speed: 1500,
+        parent: $wrapper,
+        pollOnce: true,
+      });
 
-				// Hack: iOS vh bug.
-					if (browser.os == 'ios')
-						$wrapper
-							.css('margin-top', -25)
-							.css('padding-bottom', 25);
+      $window.off("load.hl_scrolly");
+    });
 
-				// Pass scroll event to window.
-					$wrapper.on('scroll', function() {
-						$window.trigger('scroll');
-					});
+    // Enable touch mode.
+    $html.addClass("is-touch");
+  } else {
+    // Scrolly.
+    $(".scrolly").scrolly({
+      speed: 1500,
+    });
+  }
 
-			// Scrolly.
-				$window.on('load.hl_scrolly', function() {
+  // Header.
+  var $header = $("#header"),
+    $headerTitle = $header.find("header"),
+    $headerContainer = $header.find(".container");
 
-					$('.scrolly').scrolly({
-						speed: 1500,
-						parent: $wrapper,
-						pollOnce: true
-					});
+  // Make title fixed.
+  if (!browser.mobile) {
+    $window.on("load.hl_headerTitle", function () {
+      breakpoints.on(">medium", function () {
+        $headerTitle
+          .css("position", "fixed")
+          .css("height", "auto")
+          .css("top", "50%")
+          .css("left", "0")
+          .css("width", "100%")
+          .css("margin-top", $headerTitle.outerHeight() / -2);
+      });
 
-					$window.off('load.hl_scrolly');
+      breakpoints.on("<=medium", function () {
+        $headerTitle
+          .css("position", "")
+          .css("height", "")
+          .css("top", "")
+          .css("left", "")
+          .css("width", "")
+          .css("margin-top", "");
+      });
 
-				});
+      $window.off("load.hl_headerTitle");
+    });
+  }
 
-			// Enable touch mode.
-				$html.addClass('is-touch');
+  // Scrollex.
+  breakpoints.on(">small", function () {
+    $header.scrollex({
+      terminate: function () {
+        $headerTitle.css("opacity", "");
+      },
+      scroll: function (progress) {
+        // Fade out title as user scrolls down.
+        if (progress > 0.5) x = 1 - progress;
+        else x = progress;
 
-		}
-		else {
+        $headerTitle.css("opacity", Math.max(0, Math.min(1, x * 2)));
+      },
+    });
+  });
 
-			// Scrolly.
-				$('.scrolly').scrolly({
-					speed: 1500
-				});
+  breakpoints.on("<=small", function () {
+    $header.unscrollex();
+  });
 
-		}
+  // Main sections.
+  $(".main").each(function () {
+    var $this = $(this),
+      $primaryImg = $this.find(".image.primary > img"),
+      $bg,
+      options;
 
-	// Header.
-		var $header = $('#header'),
-			$headerTitle = $header.find('header'),
-			$headerContainer = $header.find('.container');
+    // No primary image? Bail.
+    if ($primaryImg.length == 0) return;
 
-		// Make title fixed.
-			if (!browser.mobile) {
+    // Create bg and append it to body.
+    $bg = $('<div class="main-bg" id="' + $this.attr("id") + '-bg"></div>')
+      .css(
+        "background-image",
+        'url("assets/css/images/overlay.png"), url("' +
+          $primaryImg.attr("src") +
+          '")'
+      )
+      .appendTo($body);
 
-				$window.on('load.hl_headerTitle', function() {
-
-					breakpoints.on('>medium', function() {
-
-						$headerTitle
-							.css('position', 'fixed')
-							.css('height', 'auto')
-							.css('top', '50%')
-							.css('left', '0')
-							.css('width', '100%')
-							.css('margin-top', ($headerTitle.outerHeight() / -2));
-
-					});
-
-					breakpoints.on('<=medium', function() {
-
-						$headerTitle
-							.css('position', '')
-							.css('height', '')
-							.css('top', '')
-							.css('left', '')
-							.css('width', '')
-							.css('margin-top', '');
-
-					});
-
-					$window.off('load.hl_headerTitle');
-
-				});
-
-			}
-
-		// Scrollex.
-			breakpoints.on('>small', function() {
-				$header.scrollex({
-					terminate: function() {
-
-						$headerTitle.css('opacity', '');
-
-					},
-					scroll: function(progress) {
-
-						// Fade out title as user scrolls down.
-							if (progress > 0.5)
-								x = 1 - progress;
-							else
-								x = progress;
-
-							$headerTitle.css('opacity', Math.max(0, Math.min(1, x * 2)));
-
-					}
-				});
-			});
-
-			breakpoints.on('<=small', function() {
-
-				$header.unscrollex();
-
-			});
-
-	// Main sections.
-		$('.main').each(function() {
-
-			var $this = $(this),
-				$primaryImg = $this.find('.image.primary > img'),
-				$bg,
-				options;
-
-			// No primary image? Bail.
-				if ($primaryImg.length == 0)
-					return;
-
-			// Create bg and append it to body.
-				$bg = $('<div class="main-bg" id="' + $this.attr('id') + '-bg"></div>')
-					.css('background-image', (
-						'url("assets/css/images/overlay.png"), url("' + $primaryImg.attr('src') + '")'
-					))
-					.appendTo($body);
-
-			// Scrollex.
-				$this.scrollex({
-					mode: 'middle',
-					delay: 200,
-					top: '-10vh',
-					bottom: '-10vh',
-					init: function() { $bg.removeClass('active'); },
-					enter: function() { $bg.addClass('active'); },
-					leave: function() { $bg.removeClass('active'); }
-				});
-
-		});
-
+    // Scrollex.
+    $this.scrollex({
+      mode: "middle",
+      delay: 200,
+      top: "-10vh",
+      bottom: "-10vh",
+      init: function () {
+        $bg.removeClass("active");
+      },
+      enter: function () {
+        $bg.addClass("active");
+      },
+      leave: function () {
+        $bg.removeClass("active");
+      },
+    });
+  });
 })(jQuery);

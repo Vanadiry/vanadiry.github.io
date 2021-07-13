@@ -8968,12 +8968,10 @@ layui.define(function (e) {
           ? s.top - n.scrollTop() + s.height + o[1] + 16 - n.height() > 0 &&
             s.where[0]()
           : 4 === c && o[0] + 16 - s.left > 0 && s.where[1](),
-        a
-          .find("." + l[5])
-          .css({
-            "background-color": t.tips[1],
-            "padding-right": t.closeBtn ? "30px" : "",
-          }),
+        a.find("." + l[5]).css({
+          "background-color": t.tips[1],
+          "padding-right": t.closeBtn ? "30px" : "",
+        }),
         a.css({
           left: s.tipLeft - (t.fixed ? n.scrollLeft() : 0),
           top: s.tipTop - (t.fixed ? n.scrollTop() : 0),
@@ -11288,13 +11286,11 @@ layui.define("jquery", function (e) {
               u = t.setTips ? t.setTips(r) : r;
             e.elemTemp.find("." + d).html(u),
               "vertical" === t.type
-                ? e.elemTemp
-                    .find("." + d)
-                    .css({
-                      bottom: s + "%",
-                      "margin-bottom": "20px",
-                      display: "inline-block",
-                    })
+                ? e.elemTemp.find("." + d).css({
+                    bottom: s + "%",
+                    "margin-bottom": "20px",
+                    display: "inline-block",
+                  })
                 : e.elemTemp
                     .find("." + d)
                     .css({ left: s + "%", display: "inline-block" });
